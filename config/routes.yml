@@ -1,0 +1,6 @@
+main:
+  method: GET
+  route: /
+  handle:
+    controller: Content\Controllers\MyController
+    action: index

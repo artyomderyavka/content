@@ -1,0 +1,16 @@
+services:
+#####micro-service clients
+  targetServiceClient:
+    class: FastMicroKernel\Components\ServiceClientsFactory
+    factory: ['FastMicroKernel\Components\ServiceClientsFactory', 'getServiceClient']
+    arguments:
+      - '@=constant("TARGET_SERVICE_CLIENT_TRANSPORT")'
+      - /target
+
+#####micro-service request builder
+  serviceRequestBuilder:
+    class: FastMicroKernel\Components\ServiceRequestBuilder
+
+#####service component
+  contentService:
+    class: Content\Components\Service
